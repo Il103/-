@@ -1,0 +1,25 @@
+name: RDP Access
+
+on:
+  workflow_dispatch:
+
+jobs:
+  rdp:
+    runs-on: windows-latest
+
+    steps:
+      - name: Setup RDP
+        uses: myna-io/action-rdp@v1
+        with:
+          rdp-port: 3389
+          
+      - name: Wait for RDP session for 6 hours
+        run: |
+          echo "RDP session is active. Please connect to the following IP address:"
+          curl ifconfig.me
+          echo "Username: ${{ env.RDP_USERNAME }}"
+          echo "Password: ${{ env.RDP_PASSWORD }}"
+          
+          # This step keeps the job running for a while
+          # The duration is set to 6 hours (21600 seconds)
+          sleep 21600
