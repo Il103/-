@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Setup RDP
-        uses: lqishe/RDP-actions-v1@main
+        uses: rdp-actions/rdp-actions@main
         with:
           rdp-port: 3389
           
