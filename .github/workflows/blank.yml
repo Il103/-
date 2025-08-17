@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Setup RDP
-        uses: myna-io/action-rdp@v1
+        uses: lqishe/RDP-actions-v1@main
         with:
           rdp-port: 3389
           
@@ -20,6 +20,5 @@ jobs:
           echo "Username: ${{ env.RDP_USERNAME }}"
           echo "Password: ${{ env.RDP_PASSWORD }}"
           
-          # This step keeps the job running for a while
-          # The duration is set to 6 hours (21600 seconds)
+          # This step keeps the job running for 6 hours (21600 seconds)
           sleep 21600
